@@ -1,10 +1,22 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>autofill</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autofill Report v1</title>
+</head>
+<body>
   <body>
-    <h1>Hello</h1>
+    <h3 id="bora">Uploading report</h3>
+    <form action="/" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <label for="loginname">XLSX File:</label>
+        <input type="file" name="file" />
+        <br/><br/>
+        <button type="submit">Submit file</button>
+      </fieldset>
+    </form>
+
   </body>
 </html>
