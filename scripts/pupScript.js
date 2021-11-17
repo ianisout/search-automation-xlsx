@@ -2,6 +2,12 @@ const puppeteer = require('puppeteer');
 const ReportController = require('../controllers/ReportController')
 const fs = require('fs');
 
+function delay() {
+  return new Promise(function(resolve) { 
+      setTimeout(resolve, 200)
+  });
+}
+
 exports.runSearch = async () => {
   const browser = await puppeteer.launch({headless: false});
   const jsonFile = require('../fileSystem/jsonFile.json');
@@ -30,6 +36,7 @@ exports.runSearch = async () => {
     const amountFromPage = await resultPage.evaluate(amount => amount.innerText, getXpath);
 
     const changeSearch = await searchPage.$x('/html/body/ul/form/input');
+    await delay();
     await changeSearch[0].click();
   
     const difference = Number((amountFromPage - jsonFile[i]['Payout Amount']).toFixed(2));
