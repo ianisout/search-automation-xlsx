@@ -1,7 +1,5 @@
 const fs = require('fs');
 const XLSX = require('xlsx');
-const http = require('http');
-
 
 exports.generateJson = async () => {
   const folder = fs.readdirSync('./fileSystem/');
@@ -59,15 +57,15 @@ exports.writeXLSX = async () => {
   const jsonFileParsed = JSON.parse(jsonFile);
 
   const newWorkBook = XLSX.utils.book_new();
-  // const fileName = FILE_FULL_NAME.substr(
-  //   FILE_FULL_NAME.lastIndexOf('/') + 1
-  // ).slice(0, -5);
   const dataSheet = XLSX.utils.json_to_sheet(jsonFileParsed);
   XLSX.utils.book_append_sheet(newWorkBook, dataSheet);
 
-  XLSX.writeFile(newWorkBook, `./fileSystem/teste.xlsx`);
+  XLSX.writeFile(newWorkBook, `./fileSystem/TodaysReport-Verified.xlsx`);
 };
 
-exports.downloadXLSX = async () => {
-  // missing
+exports.downloadReport = async () => {
+  const file = require('./fileSystem/TodaysReport-Verified.xlsx');
+  console.log(file)
+
+  return file;
 }

@@ -29,7 +29,7 @@ exports.runSearch = async () => {
     const getXpath = await resultPage.waitForXPath('/html/body/table/tbody/tr[2]/td[3]');
     const amountFromPage = await resultPage.evaluate(amount => amount.innerText, getXpath);
 
-    const changeSearch = await searchPage.$x('/html/body/ul/form/input')
+    const changeSearch = await searchPage.$x('/html/body/ul/form/input');
     await changeSearch[0].click();
   
     const difference = Number((amountFromPage - jsonFile[i]['Payout Amount']).toFixed(2));
@@ -44,11 +44,10 @@ exports.runSearch = async () => {
       Other: jsonFile[i].Other
     })
 
+    if (i >= jsonFile.length) await browser.close();
   }
   
   fs.writeFileSync('./fileSystem/jsonFile.json', JSON.stringify(newJson));
 
   await ReportController.writeXLSX();
-
-  await browser.close();
 }

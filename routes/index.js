@@ -41,10 +41,8 @@ router.get('/download-report', (req, res) => {
 });
 
 router.post('/download-report', async (req, res) => {
-
-  await ReportController.downloadXLSX();
-
-  res.redirect('/');
+  const file = `fileSystem/TodaysReport-Verified.xlsx`;
+  res.download(file);
 });
 
 module.exports = router;
