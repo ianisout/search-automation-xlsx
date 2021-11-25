@@ -29,6 +29,7 @@ exports.runSearch = async () => {
     const idInput = await searchPage.waitForXPath('/html/body/form/input');
     await idInput.type(String(jsonFile[i]["MID"]));
     const btnSearch = await searchPage.$x('/html/body/form/button')
+    await delay();
     await btnSearch[0].click();
 
     const resultPage = currentPage;
@@ -36,7 +37,6 @@ exports.runSearch = async () => {
     const amountFromPage = await resultPage.evaluate(amount => amount.innerText, getXpath);
 
     const changeSearch = await searchPage.$x('/html/body/ul/form/input');
-    await delay();
     await changeSearch[0].click();
   
     const difference = Number((amountFromPage - jsonFile[i]['Payout Amount']).toFixed(2));
