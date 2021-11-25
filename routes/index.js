@@ -43,6 +43,7 @@ router.get('/download-report', (req, res) => {
 router.post('/download-report', async (req, res) => {
   const file = `fileSystem/TodaysReport-Verified.xlsx`;
   res.download(file);
+  await ReportController.deleteDownloadedFile();
 });
 
 module.exports = router;
