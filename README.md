@@ -63,7 +63,7 @@ Download your new and updated file:<br>
 
 <h2 id="inner-workings">Inner Workings</h2>
 
-The script currently runs while displaying its action on the browser. You can choose to run a headless browser by changing this line, on the `pupScript` file to `true`:<br>
+The script currently runs while displaying its action on the browser. You can choose to run a headless browser by changing this line, on the `pupScript` file to `true`:<br><br>
 <img width="500px" src="https://user-images.githubusercontent.com/76042262/143580914-b2e526df-7abd-4745-a30f-3385725b78ff.png"><br>
 
 ## Changing the script to interact with other websites:
