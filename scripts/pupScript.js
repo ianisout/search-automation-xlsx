@@ -4,7 +4,7 @@ const fs = require('fs');
 
 function delay() {
   return new Promise(function(resolve) { 
-      setTimeout(resolve, 200)
+      setTimeout(resolve, 150)
   });
 }
 
@@ -27,9 +27,10 @@ exports.runSearch = async () => {
 
   for (let i = 0; i < jsonFile.length; i++) {
     const idInput = await searchPage.waitForXPath('/html/body/form/input');
-    await idInput.type(String(jsonFile[i]["MID"]));
-    const btnSearch = await searchPage.$x('/html/body/form/button')
     await delay();
+    await idInput.type(String(jsonFile[i]["MID"]));
+    await delay();
+    const btnSearch = await searchPage.$x('/html/body/form/button')
     await btnSearch[0].click();
 
     const resultPage = currentPage;
