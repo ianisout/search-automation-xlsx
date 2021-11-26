@@ -1,7 +1,7 @@
 # Excel file automation fill with Puppeteer and SheetJs
 
 Utilizing Puppeteer to update boring excel files while comparing them with secondary sources.
-
+<br><br>
 <hr>
 
 ## How it works
@@ -12,15 +12,15 @@ It accesses a mockup website and autofills and updates an existing excel file.<b
 - It logs into the secondary website
 - Inputs the field **ID** for each line of the uploaded file, compares currency amounts with the results from secondary website, and writes it down.
 - It creates a secondary file, .xlsx, with updated columns and comparisons, ready for download.
-
+<br>
 <hr>
 
 ## How to use it
 
-For this project to work as is, you will need to run a secondary project at the same time, where the info from the excel file matches the info on the automated search. It can be found <a href="https://github.com/ianisout/mockup-entrysearch"> right here</a>.<br>
-<br>Note: <strong>This project will only work with the current settings with the above website</strong><br>
+⚠ For this project to work as is, you will need to run a secondary project at the same time, where the info from the excel file matches the info on the automated search. It can be found <a href="https://github.com/ianisout/mockup-entrysearch"> right here</a>.<br>
+<br><i>Note: This project will only work with the current settings on the above website. Changes can be made, <a href="#inner-workings">check it here</a>.</i><br><br>
 
-Once you got that up and running, here are the instructions ↓↓↓<br>
+### Once you got that up and running, here are the instructions ↓↓↓<br>
 
 Go to a folder of your choosing and clone this repository via terminal with <br>
 `git clone https://github.com/ianisout/search-automation-xlsx .`<br>
@@ -58,15 +58,15 @@ Download your new and updated file:<br>
 
 <h3>Here are the files compared to each other, 💫<strong>magic</strong>💫</h3>
 <img width="500px" src="https://user-images.githubusercontent.com/76042262/143580126-4cd7699e-8788-4726-b717-543dcfc7e5b8.png">
-<img width="755px" src="https://user-images.githubusercontent.com/76042262/143580132-764b84e5-9923-47a3-944a-31cc895774f1.png">
+<img width="755px" src="https://user-images.githubusercontent.com/76042262/143580132-764b84e5-9923-47a3-944a-31cc895774f1.png"><br>
 <hr>
 
-## Inner workings
+<h2 id="inner-workings">Inner Workings</h2>
 
 The script currently runs while displaying its action on the browser. You can choose to run a headless browser by changing this line, on the `pupScript` file to `true`:<br>
 <img width="500px" src="https://user-images.githubusercontent.com/76042262/143580914-b2e526df-7abd-4745-a30f-3385725b78ff.png"><br>
 
-## Changing the script to interact with other websites:
+<h2>Changing the script to interact with other websites:</h2>
 This is where it gets a little tricky.<br>
 On the `pupScript` file, line 15, you can change it to any website you want:<br>
 `await page.goto('http://whatever-website.com');`<br><br>
@@ -85,6 +85,6 @@ For greater usability of these features, refer to Puppeteer documentation <a hre
 👉 <strong>There are no error handlers in this project so far. If the script can't find an element on page, or if the inserted value does not return a valid entry, it will crash.</strong>
 Issues must get get fixed as problems arise. It is not a one-fits-all solution.
 
-<hr>
+<hr><br>
 
 Created using <a href="https://expressjs.com/en/api.html">Express<a>, <a href="https://pptr.dev/">Puppeteer<a>, and <a href="https://github.com/SheetJS/sheetjs">SheetJS<a>. Because I was bored as heck to do the grunt work on excel files. Cheers
