@@ -50,3 +50,16 @@ main button:hover {
   color: cornflowerblue;
   border: 1px solid cornflowerblue
 }
+
+#loading-gif {
+  display: none;
+  width: 40px;
+  margin: -20px 0 25px 0;
+}
+
+button.disabled {
+	box-shadow: none;
+	cursor: not-allowed;
+	opacity: 0.9;
+	pointer-events: none;
+}

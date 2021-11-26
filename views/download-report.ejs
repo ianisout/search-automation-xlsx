@@ -14,5 +14,9 @@
       <button style="margin-top: 0" type="submit">Download report</button>
     </form>
   </main>
+  <script>
+    const btnDownload = document.querySelector('button');
+    btnDownload.addEventListener('click', () => btnDownload.classList.add('disabled'))
+  </script>
 </body>
 </html>
