@@ -8,19 +8,19 @@ Column creation | value comparison | export for download
 
 ## How it works
 It accesses a mockup website and autofills and updates an existing excel file.<br>
-- Upload and excel file
-- It reads the file (csv, xlsx, etc.) and creates a JSON file with extra fields
+- Upload and excel file. It reads csv, xlsx, etc. and creates a JSON file with extra fields, pre-set
 - Run the script
-- It logs into the secondary website
-- Inputs the field **ID** for each line of the uploaded file, compares currency amounts with the results from secondary website, and writes it down.
-- It creates a secondary file, .xlsx, with updated columns and comparisons, ready for download.
+- The script:
+    - Logs into the secondary website
+    - Inputs the field **ID** for each line of the uploaded file, compares amounts with the results from secondary website, and writes it down.
+    - Creates a secondary file, .xlsx, with updated columns and comparisons, ready for download
 <br>
 <hr>
 
 ## How to use it
 
-⚠ For this project to work as is, you will need to run a secondary project at the same time, where the info from the excel file matches the info on the automated search. It can be found <a href="https://github.com/ianisout/mockup-entrysearch"> right here</a>.<br>
-<br><i>Note: This project will only work with the current settings on the above website. Changes can be made, <a href="#inner-workings">check it here</a>.</i><br><br>
+⚠ For this project to work as is, you will need to run a secondary project at the same time, where the info from the excel file matches the info on the automated search. It can be found <a href="https://github.com/ianisout/mockup-entrysearch"> <strong>here</strong></a>.<br>
+<br><i>Note: This project will only work with the current settings on the above website. Other changes can be made, <a href="#inner-workings">check here</a>.</i><br><br>
 
 ### Once you got that project up and running:<br>
 
@@ -47,7 +47,7 @@ Your project should be up and running, access it on the url<br>
 Upload the file `inputSpreadSheet.csv` into the script → run the script → Wait while the script is at work → A browser will open up and run the automated gathering of info → Download your new and updated file:<br><br>
 <img width="800px" src="https://user-images.githubusercontent.com/76042262/143592655-10a03b6c-2ed4-423f-ab5f-de738726fc09.gif"><br>
 
-<h4>Here are the files compared to each other, 💫<strong>magic</strong>💫</h4>
+<h4>💫 <strong>Magic result</strong>💫 </h4>
 <img width="500px" src="https://user-images.githubusercontent.com/76042262/143580126-4cd7699e-8788-4726-b717-543dcfc7e5b8.png">
 <img width="755px" src="https://user-images.githubusercontent.com/76042262/143580132-764b84e5-9923-47a3-944a-31cc895774f1.png"><br>
 <hr>
