@@ -8,7 +8,7 @@ Column creation | value comparison | export for download
 
 ## How it works
 It accesses a mockup website and autofills and updates an existing excel file.<br>
-- Upload and excel file. It reads csv, xlsx, etc. and creates a JSON file with extra fields, pre-set
+- Upload and excel file. It reads csv, xlsx, etc. and creates a JSON file with extra columns, pre-set
 - Run the script
 - The script:
     - Logs into the secondary website
