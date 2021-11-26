@@ -1,6 +1,6 @@
-# Excel file automation fill with Puppeteer and SheetJs
+# Excel file automation with Puppeteer and SheetJs
 
-Utilizing Puppeteer to update boring excel files while comparing them with secondary sources.
+Autofilling a boring excel sheet with values gathered from a secondary platform - with value comparison and column creation.
 <br><br>
 <hr>
 
