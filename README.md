@@ -6,7 +6,7 @@ Autofilling a boring excel sheet with values gathered from a secondary platform 
 
 ## How it works
 It accesses a mockup website and autofills and updates an existing excel file.<br>
-- You upload and excel file
+- Upload and excel file
 - It reads the file (csv, xlsx, etc.) and creates a JSON file with extra fields
 - Run the script
 - It logs into the secondary website
