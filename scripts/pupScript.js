@@ -16,8 +16,8 @@ exports.runSearch = async () => {
   const currentPage = await browser.targets()[browser.targets().length-1].page();
   const newJson = []
 
-  await page.type('input[type="email"]', 'user1@asd');
-  await page.type('input[type="password"]', 'user1@asd');
+  await page.type('input[type="email"]', 'test@test.test');
+  await page.type('input[type="password"]', 'test@test.test');
   await Promise.all([
       page.waitForNavigation(),
       page.click('button')
@@ -28,7 +28,7 @@ exports.runSearch = async () => {
   for (let i = 0; i < jsonFile.length; i++) {
     const idInput = await searchPage.waitForXPath('/html/body/form/input');
     await delay();
-    await idInput.type(String(jsonFile[i]["MID"]));
+    await idInput.type(String(jsonFile[i]["ID"]));
     await delay();
     const btnSearch = await searchPage.$x('/html/body/form/button')
     await btnSearch[0].click();
@@ -40,12 +40,12 @@ exports.runSearch = async () => {
     const changeSearch = await searchPage.$x('/html/body/ul/form/input');
     await changeSearch[0].click();
   
-    const difference = Number((amountFromPage - jsonFile[i]['Payout Amount']).toFixed(2));
+    const difference = Number((amountFromPage - jsonFile[i]['First Amount']).toFixed(2));
 
     newJson.push({
-      BTest: jsonFile[i].BTest,
-      "Payout Amount": jsonFile[i]["Payout Amount"],
-      MID: jsonFile[i].MID,
+      'User-or-merchant-name': jsonFile[i]['User-or-merchant-name'],
+      "First Amount": jsonFile[i]["First Amount"],
+      ID: jsonFile[i].ID,
       "Amount from secondary website": Number(amountFromPage),
       Status: difference >= 0 && difference < 1 ? "Success" : "Mismatch",
       Difference: difference,

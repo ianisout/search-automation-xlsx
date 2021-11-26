@@ -12,9 +12,9 @@ exports.generateJson = async () => {
 
   for (let i = 0; i < jsonFile.length; i++) {
     newJson.push({
-      BTest: jsonFile[i].BTest,
-      'Payout Amount': jsonFile[i].amount1,
-      MID: jsonFile[i].ID,
+      'User-or-merchant-name': jsonFile[i]['User-or-merchant-name'],
+      'First Amount': jsonFile[i].amount1,
+      ID: jsonFile[i].ID,
       'Amount from secondary website': null,
       Status: null,
       Difference: null,
@@ -41,7 +41,7 @@ exports.updateJson = (inputAmount) => {
 
   jsonFile.forEach((entry) => {
     const difference = Number(
-      (inputAmount - entry['Payout Amount']).toFixed(2)
+      (inputAmount - entry['First Amount']).toFixed(2)
     );
     entry['Amount from secondary website'] = inputAmount;
     entry.Difference = difference;
@@ -65,7 +65,7 @@ exports.writeXLSX = async () => {
   const dataSheet = XLSX.utils.json_to_sheet(jsonFileParsed);
   XLSX.utils.book_append_sheet(newWorkBook, dataSheet);
 
-  XLSX.writeFile(newWorkBook, `./fileSystem/TodaysReport-Verified.xlsx`);
+  XLSX.writeFile(newWorkBook, `./fileSystem/Report-Verified.xlsx`);
 
   fs.unlinkSync('./fileSystem/jsonFile.json');
 };
@@ -78,7 +78,7 @@ exports.downloadReport = async () => {
 
 exports.deleteDownloadedFile = async () => {
   setTimeout(() => {
-    fs.unlink('./fileSystem/TodaysReport-Verified.xlsx', function (err) {
+    fs.unlink('./fileSystem/Report-Verified.xlsx', function (err) {
       if (err && err.code == 'ENOENT') {
         console.info("File doesn't exist, won't remove it.");
       } else {
