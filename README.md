@@ -58,7 +58,7 @@ The script currently runs while displaying its action on the browser. You can ch
 <img width="500px" src="https://user-images.githubusercontent.com/76042262/143580914-b2e526df-7abd-4745-a30f-3385725b78ff.png"><br><br>
 
 ## Changing the script to interact with other websites:
-This is where it gets a little tricky.<br>
+Here's where the fun beings.<br><br>
 On the `pupScript` file, line 15, you can change it to any website you want:<br>
 `await page.goto('http://whatever-website.com');`<br>
 
@@ -71,11 +71,11 @@ The interaction with the page must also be altered by changing the elements with
 🌟 TIP 🌟<br>
 To get the XPath of an element, simply inspect the page, right-click the element of choice, and go to copy > Copy full XPath.<br>
 
-For greater usability of these features, refer to Puppeteer documentation <a href="https://pptr.dev/">here<a>.
+For greater usability of these features, refer to Puppeteer documentation <a href="https://pptr.dev/">here<a>.<br><br>
 
-👉 <strong>There are no error handlers in this project so far. If the script can't find an element on page or if the inserted value does not return a valid entry, it will crash.</strong>
+👉 PS.: There are no error handlers in this project so far. If the script can't find an element on page or if the inserted value does not return a valid entry, <strong>it will crash.</strong>
 Issues must get get fixed as problems arise. It is not a one-fits-all solution.
 
-<hr><br>
+<br><hr>
 
-Created using <a href="https://expressjs.com/en/api.html">Express<a>, <a href="https://pptr.dev/">Puppeteer<a>, and <a href="https://github.com/SheetJS/sheetjs">SheetJS<a>. Because I was bored as heck to do the grunt work on excel files. Cheers<br>
+Created using <a href="https://expressjs.com/en/api.html">Express<a>, <a href="https://pptr.dev/">Puppeteer<a>, and <a href="https://github.com/SheetJS/sheetjs">SheetJS<a>. Because I was bored as heck to do the grunt work on excel files. Cheers
