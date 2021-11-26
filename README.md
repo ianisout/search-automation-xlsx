@@ -1,6 +1,6 @@
 # Excel file automation with Puppeteer and SheetJs
 
-Autofilling a boring excel sheet with values gathered from a secondary platform - with value comparison and column creation.
+Autofilling a boring excel sheet with values gathered from a secondary platform - with column creation, value comparison, and export for downloading.
 <br><br>
 <hr>
 
