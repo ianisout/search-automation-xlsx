@@ -1,4 +1,5 @@
-# Excel file automation with Puppeteer and SheetJs
+# Web Scraping – Puppeteer + SheetJs
+## Excel file automation
 <img width="600px" src="https://user-images.githubusercontent.com/76042262/143578965-f849477f-dab7-47e0-9ce4-00cf13c99b5b.png"><br>
 
 Autofilling a boring excel sheet with values gathered from a secondary platform.<br>
